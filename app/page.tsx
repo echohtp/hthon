@@ -39,13 +39,14 @@ const faqs = [
 const tracks = Array(6).fill({
   name: "Tokenized Assets",
   sponsor: "You",
-},)
+});
 
 const judges = Array(8).fill({
   name: "First Last",
-  image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-  title: "Founder"
-})
+  image:
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  title: "Founder",
+});
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -121,6 +122,7 @@ export default function Home() {
             src="/images/blobs.jpg"
             className="absolute object-cover w-full h-full"
           />
+          <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-b h-1/2 from-transparent to-black"></div>
         </div>
         <div className="absolute inset-0 bg-black opacity-25"></div>
         <header className="absolute top-0 left-0 right-0 z-20">
@@ -182,7 +184,7 @@ export default function Home() {
       </div>
 
       <section>
-        <h1 className="mt-4 font-extrabold leading-tight text-center text-white text-7xl sm:text-8xl anaglyphText pt-6">
+        <h1 className="mt-10 pb-4 font-extrabold leading-tight text-center text-white text-7xl sm:text-8xl anaglyphText pt-6">
           Prizes
         </h1>
 
@@ -191,7 +193,7 @@ export default function Home() {
             <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
               <div className="mx-auto flex max-w-xs flex-col gap-y-4">
                 <dt className="text-base leading-7 text-gray-400">5 Tracks</dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl"></dd>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">6 Tracks</dd>
               </div>
               <div className="mx-auto flex max-w-xs flex-col gap-y-4">
                 <dt className="text-base leading-7 text-gray-400">
@@ -215,41 +217,37 @@ export default function Home() {
       </section>
 
       <section>
-        <h1 className="mt-4 font-extrabold leading-tight text-center text-white text-7xl sm:text-8xl anaglyphText">
+        <h1 className="pb-10 font-extrabold leading-tight text-center text-white text-7xl sm:text-8xl anaglyphText">
           Tracks
         </h1>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mx-10 my-10">
-          
-          
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 mx-10 my-10 px-32">
           {tracks.map((track) => (
-          <div className="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-black px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400 anaglyphCard" key={Math.random()}>
-            <div className="flex-shrink-0">
-              <img
+            <div
+              className="relative flex items-center text-center space-x-3 rounded-lg border border-gray-300 bg-black px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400 anaglyphCard"
+              key={Math.random()}
+            >
+              <div className="flex-shrink-0">
+                {/* <img
                 className="h-10 w-10 rounded-full"
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                 alt=""
-              />
+              /> */}
+              </div>
+              <div className="min-w-0 flex-1">
+                <a href="#" className="focus:outline-none">
+                  <span className="absolute inset-0" aria-hidden="true"></span>
+                  <p className="font-medium text-gray-200">Tokenized Assets</p>
+                  <p className="truncate text-gray-500">Sponsored by You</p>
+                </a>
+              </div>
             </div>
-            <div className="min-w-0 flex-1">
-              <a href="#" className="focus:outline-none">
-                <span className="absolute inset-0" aria-hidden="true"></span>
-                <p className="text-sm font-medium text-gray-200">
-                  Tokenized Assets
-                </p>
-                <p className="truncate text-sm text-gray-500">
-                  Sponsored by You
-                </p>
-              </a>
-            </div>
-          </div>
           ))}
-        
         </div>
       </section>
 
       <section>
-        <h1 className="mt-4 font-extrabold leading-tight text-center text-white text-7xl sm:text-8xl anaglyph">
+        <h1 className="py-8 font-extrabold leading-tight text-center text-white text-7xl sm:text-8xl anaglyph">
           Judges
         </h1>
 
@@ -258,25 +256,26 @@ export default function Home() {
           id="judgeList"
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-10 my-10"
         >
-
           {judges.map((judge) => (
-          <li className="col-span-1 flex flex-col rounded-lg bg-black text-center shadow anaglyphCard text-white" key={Math.random()}>
-            <div className="flex flex-1 flex-col p-8">
-              <img
-                className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
-                src={judge.image}
-                alt=""
-              />
-              <h3 className="mt-6 text-sm font-medium text-gray-200">name</h3>
-              <dl className="mt-1 flex flex-grow flex-col justify-between">
-                <dt className="sr-only">Title</dt>
-                <dd className="text-sm text-gray-400">Title</dd>
-                <dt className="sr-only">Role</dt>
-              </dl>
-            </div>
-          </li>
+            <li
+              className="col-span-1 flex flex-col rounded-lg bg-black text-center shadow anaglyphCard text-white"
+              key={Math.random()}
+            >
+              <div className="flex flex-1 flex-col p-8">
+                <img
+                  className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
+                  src={judge.image}
+                  alt=""
+                />
+                <h3 className="mt-6 text-sm font-medium text-gray-200">name</h3>
+                <dl className="mt-1 flex flex-grow flex-col justify-between">
+                  <dt className="sr-only">Title</dt>
+                  <dd className="text-sm text-gray-400">Title</dd>
+                  <dt className="sr-only">Role</dt>
+                </dl>
+              </div>
+            </li>
           ))}
-        
         </ul>
       </section>
 
